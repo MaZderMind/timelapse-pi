@@ -9,7 +9,7 @@ from datetime import datetime
 try:
 	basedir = sys.argv[1]
 except IndexError:
-	basedir = '.';
+	basedir = './images/';
 
 print("scanning directory", basedir)
 for filename in os.listdir(basedir):
@@ -18,7 +18,7 @@ for filename in os.listdir(basedir):
 		continue
 
 	recorded_at = datetime.fromtimestamp(int(match.group(1)))
-	symlink_directory = 'year-{year:04}/month-{month:02}/day-{day:02}/hour-{hour:02}'.format(
+	symlink_directory = 'symlinks/year-{year:04}/month-{month:02}/day-{day:02}/hour-{hour:02}'.format(
 		year=recorded_at.year,
 		month=recorded_at.month,
 		day=recorded_at.day,
@@ -30,11 +30,12 @@ for filename in os.listdir(basedir):
 		second=recorded_at.second)
 
 	symlink_filepath = os.path.join(symlink_directory, symlink_filename)
-	symlink_sourcepath = os.path.join('../../../..', basedir, filename)
+	symlink_sourcepath = os.path.join('../../../../..', basedir, filename)
 
 	print(filename, " -> ", symlink_filepath)
+	os.makedirs(symlink_directory, exist_ok=True)
+
 	try:
-		os.makedirs(symlink_directory)
 		os.symlink(symlink_sourcepath, symlink_filepath)
 	except FileExistsError:
 		pass
