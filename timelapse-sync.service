@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync Timelapse-Images to Storage
+
+[Service]
+ExecStart=/opt/timelapse/sync.sh
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target

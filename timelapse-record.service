@@ -1,0 +1,10 @@
+[Unit]
+Description=Record Timelapse-Images
+
+[Service]
+ExecStart=/opt/timelapse/record.sh
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
