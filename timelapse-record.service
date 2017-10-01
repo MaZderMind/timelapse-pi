@@ -1,5 +1,6 @@
 [Unit]
 Description=Record Timelapse-Images
+Conflicts=timelapse-record-adaptive.service
 
 [Service]
 ExecStart=/opt/timelapse/record.sh

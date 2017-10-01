@@ -1,5 +1,6 @@
 [Unit]
 Description=Record Timelapse-Images with adaptive Shutter
+Conflicts=timelapse-record.service
 
 [Service]
 ExecStart=/opt/timelapse/env/bin/python /opt/timelapse/adaptive_record.py
