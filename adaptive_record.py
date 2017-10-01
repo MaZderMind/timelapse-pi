@@ -8,10 +8,10 @@ import numpy
 
 def main():
 	time_to_shutter_microseconds_map = {
-		second_of_day(datetime.time( 8,  0)): 10000,
-		second_of_day(datetime.time(12,  0)):  3000,
-		second_of_day(datetime.time(17,  0)):  3000,
-		second_of_day(datetime.time(18,  0)): 10000,
+		second_of_day(datetime.time( 8,  0)): 100000,
+		second_of_day(datetime.time(12,  0)):   3000,
+		second_of_day(datetime.time(17,  0)):   3000,
+		second_of_day(datetime.time(18,  0)): 100000,
 	}
 
 	x_axis, y_axis = axes_lists_from_map(time_to_shutter_microseconds_map)
