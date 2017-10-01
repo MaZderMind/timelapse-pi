@@ -1,0 +1,10 @@
+[Unit]
+Description=Record Timelapse-Images with adaptive Shutter
+
+[Service]
+ExecStart=/opt/timelapse/env/bin/python /opt/timelapse/adaptive_record.py
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
