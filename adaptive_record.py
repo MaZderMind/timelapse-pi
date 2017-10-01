@@ -30,10 +30,10 @@ def main():
 
 		if shutter > 0:
 			record_snapshot(shutter, filename)
+			# time.sleep(5)
 		else:
 			print("skipping @ {now}".format(now=now))
-
-		time.sleep(2.5)
+			time.sleep(60)
 
 def record_snapshot(shutter, filename):
 	cmdline = "raspistill --verbose --hflip --vflip -ss {shutter} --awb off --awbgains 1.5,1.3 --exposure off --ISO 100 --metering matrix --ev -24 -o {filename}".format(
