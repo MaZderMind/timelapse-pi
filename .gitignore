@@ -1,3 +1,7 @@
 /images/*
 /symlinks/*
 /*.mp4
+
+/env
+/__pycache__
+
